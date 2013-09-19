@@ -5,14 +5,14 @@
 </div>
 
 <?php echo $this->Form->create('User', array(
-    'class' => 'form-horizontal',
-    'inputDefaults' => array(
-        'format' => array('before', 'label', 'between', 'input', 'error', 'after'),
-        'div' => array('class' => 'form-group'),
-      	'label' => array('class' => 'col-lg-2 control-label'),
-      	'between' => '<div class="col-lg-10">',
-       	'after' => '</div>',
-        'error' => array('attributes' => array('wrap' => 'span', 'class' => 'label label-warning')),
+	'class' => 'form-horizontal',
+	'inputDefaults' => array(
+		'format' => array('before', 'label', 'between', 'input', 'error', 'after'),
+		'div' => array('class' => 'form-group'),
+		'label' => array('class' => 'col-lg-2 control-label'),
+		'between' => '<div class="col-lg-10">',
+		'after' => '</div>',
+ 		'error' => array('attributes' => array('wrap' => 'span', 'class' => 'label label-warning')),
     )));?>
     
 <fieldset>
@@ -23,7 +23,8 @@
 ?>
 
 <?php echo $this->Form->input('password', array(
-	'class' => 'form-control'
+	'class' => 'form-control',
+	'value' => ''
     )); 
 ?>
 

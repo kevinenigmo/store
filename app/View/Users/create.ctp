@@ -31,6 +31,12 @@
     )); 
 ?>
 
+<?php echo $this->Form->input('confirmPassword', array(
+	'class' => 'form-control',
+	'type' => 'password'
+    )); 
+?>
+
 </fieldset>
 
 <div class="form-group">

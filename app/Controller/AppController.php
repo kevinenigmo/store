@@ -34,7 +34,11 @@ App::uses('Controller', 'Controller');
 class AppController extends Controller {
 	
 	public $helpers = array('Html', 'Form', 'Session');
-	public $components = array('Session', 'Auth' => array('loginRedirect' => array('controller' => 'products', 'action' => 'index'), 'logoutRedirect' => array('controller' => 'products', 'action' =>'index'), 'authorize' => array('Controller')));
+	public $components = array('Session', 
+								'Auth' => array('loginRedirect' => array('controller' => 'products', 'action' => 'index'), 
+												'logoutRedirect' => array('controller' => 'products', 'action' =>'index'), 
+												'authorize' => array('Controller'))			
+								);
 	
 	public function beforeRender() {
 		$this->set('userData', $this->Auth->user());
@@ -46,5 +50,9 @@ class AppController extends Controller {
 		}
 		
 		return 0;
+	}
+	
+	public function setFlash($message, $type){
+		$this->Session->setFlash($message, 'default', array('class' => 'container alert alert-' . $type));
 	}
 }

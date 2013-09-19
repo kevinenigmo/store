@@ -11,7 +11,7 @@ class UsersController extends AppController {
 			if ($this->Auth->login()) {
 				return $this->redirect($this->Auth->redirect());
 			}
-			$this->Session->setFlash(__('username or password not exists'), 'default', array('class' => 'container alert alert-danger'));
+			$this->setFlash(__('username or password not exists'), 'danger');
 		}
 	}
 	
@@ -23,10 +23,10 @@ class UsersController extends AppController {
 		if ($this->request->is('post')) {
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('User is created'), 'default', array('class' => 'container alert alert-info'));
+				$this->setFlash(__('User is created'), 'info');
 				return $this->redirect(array('action' => 'login'));
 			}
-			$this->Session->setFlash('Unable to create user', 'default', array('class' => 'container alert alert-danger'));
+			$this->setFlash('Unable to create user', 'danger');
 		}
 	}
 	
@@ -46,7 +46,7 @@ class UsersController extends AppController {
 				$this->Session->setFlash(__('User is edited'), 'default', array('class' => 'container alert alert-info'));
 				return $this->redirect(array('controller' => 'products', 'action' => 'index'));
 			}
-			$this->Session->setFlash(__('Unable to edit user'), 'default', array('class' => 'container alert alert-danger'));
+			$this->setFlash(__('Unable to edit user'), 'danger');
 		}
 		
 		if (!$this->request->data) {
