@@ -52,6 +52,10 @@
 
 <?php endforeach ?>
 <?php unset($product) ?>
+	
+<?php if ($c % 4 !== 0) { ?>
+	</div>
+<?php }; ?>
 
 <div class="pagination">
 	<?php if ($this->Paginator->hasPrev()) {echo $this->Paginator->prev('<<Prev', null, null, array('class' => 'disabled'));} ?>

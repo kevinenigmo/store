@@ -2,7 +2,7 @@
 
 App::uses('Component', 'Controller');
 
-class MyComponent extends Component {
+class MyImageComponent extends Component {
 public function imageresize($imagePath, $thumb_path, $destinationWidth, $destinationHeight) {
 		// The file has to exist to be resized
 		if (file_exists($imagePath)) {

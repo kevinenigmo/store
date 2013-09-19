@@ -3,7 +3,7 @@
 class ProductsController extends AppController {
 	
 	public $helpers = array('Js' => array('Jquery'));
-	public $components = array('Paginator', 'My');
+	public $components = array('Paginator', 'MyImage');
 	
 	public $paginate = array('limit' => 20, 'order' => array('Product.id' => 'asc'));
 	
@@ -73,7 +73,7 @@ class ProductsController extends AppController {
 					$dir = new Folder(WWW_ROOT . 'img/products/' . $product['Product']['id'], true, 0755);
 					move_uploaded_file($file['tmp_name'], $dir->path . '/' .$file['name']);
 					
-					$this->My->imageresize($dir->path . '/' .$file['name'], $dir->path . '/small_' .$file['name'], 200, 200);
+					$this->MyImage->imageresize($dir->path . '/' .$file['name'], $dir->path . '/small_' .$file['name'], 200, 200);
 				}
 				return $this->redirect(array('action' => 'index'));
 			}
