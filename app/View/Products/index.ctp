@@ -34,7 +34,7 @@
 	    <div class="thumbnail">
 	      <?php if ($product['Product']['image']) { echo $this->Html->image('products/' . $product['Product']['id'] .'/small_'. $product['Product']['image']);} ?>
 	      <div class="caption">
-	        <h3><?php echo $this->Html->link($product['Product']['item_title'], array('controller' => 'products', 'action' => 'detail', $product['Product']['id'])) ?></h3>
+	        <h4><?php echo $this->Html->link($product['Product']['item_title'], array('controller' => 'products', 'action' => 'detail', $product['Product']['id'])) ?></h4>
 	        <p><?php echo $this->Text->truncate($product['Product']['item_comment'], 100, array('ellipsis' => '..')) ?></p>
 	        <p><?php echo $this->Number->currency($product['Product']['price'], 'JPY') ?></p>
 	        <p><?php echo $product['User']['username'] ?></p>

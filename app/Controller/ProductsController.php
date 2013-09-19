@@ -72,7 +72,7 @@ class ProductsController extends AppController {
 					$dir = new Folder(WWW_ROOT . 'img/products/' . $product['Product']['id'], true, 0755);
 					move_uploaded_file($file['tmp_name'], $dir->path . '/' .$file['name']);
 					
-					$this->imageresize($dir->path . '/' .$file['name'], $dir->path . '/small_' .$file['name'], 80, 80);
+					$this->imageresize($dir->path . '/' .$file['name'], $dir->path . '/small_' .$file['name'], 200, 200);
 				}
 				return $this->redirect(array('action' => 'index'));
 			}
