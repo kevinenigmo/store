@@ -66,7 +66,7 @@ class ProductsController extends AppController {
 			$this->request->data['Product']['brand_id']++;
 			
 			if ($this->Product->save($this->request->data)) {
-				$this->Session->setFlash(__('The item is created'));
+				$this->Session->setFlash(__('The item is created'), 'default', array('class' => 'container alert alert-info'));
 				$product = $this->Product->find('first', array('order' => array('Product.id' => 'desc')));
 				if ($product['Product']['image']) {
 					$dir = new Folder(WWW_ROOT . 'img/products/' . $product['Product']['id'], true, 0755);
@@ -100,7 +100,7 @@ class ProductsController extends AppController {
 			$this->Product->id = $id;
 			$this->request->data['Product']['brand_id']++;
 			if ($this->Product->save($this->request->data)) {
-				$this->Session->setFlash(__('Item is edited'));
+				$this->Session->setFlash(__('Item is edited'), 'default', array('class' => 'container alert alert-info'));
 				return $this->redirect(array('action' => 'index'));
 			}
 			$this->Session->setFlash(__('Unable to edit the item'), 'default', array('class' => 'container alert alert-danger'));
@@ -164,7 +164,7 @@ class ProductsController extends AppController {
 				imagecopyresampled($destination, $source, 0, 0, 0, 0, $destinationWidth, $destinationHeight, $sourceWidth, $sourceHeight);
 				imagepng($destination, $thumb_path);
 			} else {
-				$this->Session->setFlash(__('This image type is not supported.'), 'flash_error');
+				$this->Session->setFlash(__('This image type is not supported.'), 'default', array('class' => 'container alert alert-danger'));
 			}
 	
 			// Free up memory

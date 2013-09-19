@@ -12,7 +12,7 @@
       	'label' => array('class' => 'col-lg-2 control-label'),
       	'between' => '<div class="col-lg-10">',
        	'after' => '</div>',
-        'error' => array('attributes' => array('wrap' => 'span', 'class' => 'help-inline')),
+        'error' => array('attributes' => array('wrap' => 'span', 'class' => 'label label-warning')),
     )));?>
     
 <fieldset>
