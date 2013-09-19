@@ -28,6 +28,12 @@
     )); 
 ?>
 
+<?php echo $this->Form->input('confirmPassword', array(
+	'class' => 'form-control',
+	'type' => 'password'
+    )); 
+?>
+
 <?php echo $this->Form->input('admin', array('type' => 'checkbox')) ?>
 
 </fieldset>
