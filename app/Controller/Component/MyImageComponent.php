@@ -39,12 +39,14 @@ public function imageresize($imagePath, $thumb_path, $destinationWidth, $destina
 				imagecopyresampled($destination, $source, 0, 0, 0, 0, $destinationWidth, $destinationHeight, $sourceWidth, $sourceHeight);
 				imagepng($destination, $thumb_path);
 			} else {
-				$this->Session->setFlash(__('This image type is not supported.'), 'default', array('class' => 'container alert alert-danger'));
+				return 0;
 			}
 	
 			// Free up memory
 			imagedestroy($source);
 			imagedestroy($destination);
+			
+			return 1;
 		}
 	}
 }
